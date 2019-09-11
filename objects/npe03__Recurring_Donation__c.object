@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>DonorPaymentMethod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Donor Payment Method</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>DonorPaymentMethod__c.Contact__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.npe03__Contact__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>DonorPaymentMethod__c</referenceTo>
+        <relationshipLabel>Recurring Donations</relationshipLabel>
+        <relationshipName>Recurring_Donations</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GC_Installment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>GC Installment Amount</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GcSignupId__c</fullName>
+        <externalId>true</externalId>
+        <label>GC Signup ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Households__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parish ID</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Parish</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.npe03__Schedule_Type__c</field>
+                <operation>equals</operation>
+                <value>Divide By</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Parish_ID__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Recurring Donations (Parish ID)</relationshipLabel>
+        <relationshipName>Recurring_Donations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Record_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Setup Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>npe03__Amount__c</columns>
+        <columns>npe03__Recurring_Donation_Campaign__c</columns>
+        <columns>npe03__Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <validationRules>
+        <fullName>AmountValue</fullName>
+        <active>true</active>
+        <errorConditionFormula>npe03__Amount__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>npe03__Amount__c</errorDisplayField>
+        <errorMessage>Please add correct value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Installments</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( npe03__Installments__c )</errorConditionFormula>
+        <errorDisplayField>npe03__Installments__c</errorDisplayField>
+        <errorMessage>Complete this field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InstallmentsValue</fullName>
+        <active>true</active>
+        <errorConditionFormula>npe03__Installments__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>npe03__Installments__c</errorDisplayField>
+        <errorMessage>Please add correct value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Parish_Id_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( npe03__Schedule_Type__c , &apos;Divide By&apos;),
+ISBLANK( Households__c )
+)</errorConditionFormula>
+        <errorDisplayField>Households__c</errorDisplayField>
+        <errorMessage>Please select a Parish ID.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Schedule_Type_Error</fullName>
+        <active>true</active>
+        <errorConditionFormula>TEXT(npe03__Schedule_Type__c) &lt;&gt; if( TEXT(npe03__Recurring_Donation_Campaign__r.Type) &lt;&gt; &apos;Pledged Events&apos; &amp;&amp; TEXT(npe03__Recurring_Donation_Campaign__r.Type) &lt;&gt; &apos;High Value&apos;, &apos;Multiply By&apos;, &apos;Divide By&apos;)</errorConditionFormula>
+        <errorMessage>The Selected campaign, fund, or event is not compatible for this type of gift, please correct and try again.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ticket Events</fullName>
+        <default>false</default>
+        <label>Ticket Events</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Crowdfunding</fullName>
+        <default>false</default>
+        <label>Crowdfunding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pledged Events</fullName>
+        <default>false</default>
+        <label>Pledged Events</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Normal Events</fullName>
+        <default>true</default>
+        <label>Normal Events</label>
+    </standardValue>
+</StandardValueSet>

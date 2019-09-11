@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Church_Marriage</fullName>
+        <default>false</default>
+        <label>Church Marriage (by priest)</label>
+    </customValue>
+    <customValue>
+        <fullName>Church_Marriage_Dispensation</fullName>
+        <default>false</default>
+        <label>Church Marriage with Dispensation (by priest)</label>
+    </customValue>
+    <customValue>
+        <fullName>Annulment_Granted</fullName>
+        <default>false</default>
+        <label>Annulment Granted</label>
+    </customValue>
+    <customValue>
+        <fullName>tempdeletelater</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>tempdeletelater</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Sure/Other</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Not Sure/Other</label>
+    </customValue>
+    <masterLabel>Marriage Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

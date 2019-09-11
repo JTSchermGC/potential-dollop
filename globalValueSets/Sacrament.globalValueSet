@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Baptism</fullName>
+        <default>false</default>
+        <label>Baptism</label>
+    </customValue>
+    <customValue>
+        <fullName>Confirmation</fullName>
+        <default>false</default>
+        <label>Confirmation</label>
+    </customValue>
+    <customValue>
+        <fullName>First_Eucharist</fullName>
+        <default>false</default>
+        <label>First Eucharist</label>
+    </customValue>
+    <customValue>
+        <fullName>Marriage</fullName>
+        <default>false</default>
+        <label>Marriage</label>
+    </customValue>
+    <customValue>
+        <fullName>Funeral</fullName>
+        <default>false</default>
+        <label>Funeral</label>
+    </customValue>
+    <customValue>
+        <fullName>Anointing of the Sick</fullName>
+        <default>false</default>
+        <label>Anointing of the Sick</label>
+    </customValue>
+    <customValue>
+        <fullName>Holy Orders</fullName>
+        <default>false</default>
+        <label>Holy Orders</label>
+    </customValue>
+    <description>List of sacraments.</description>
+    <masterLabel>Sacrament</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

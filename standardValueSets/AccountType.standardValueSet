@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Donor Household</fullName>
+        <default>false</default>
+        <label>Donor Household</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Parish Ministry</fullName>
+        <default>false</default>
+        <label>Parish Ministry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Diocesan Agency</fullName>
+        <default>false</default>
+        <label>Diocesan Agency</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Foundation</fullName>
+        <default>false</default>
+        <label>Foundation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Matching Grant</fullName>
+        <default>false</default>
+        <label>Matching Grant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>School Board</fullName>
+        <default>false</default>
+        <label>School Board</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Parent Group</fullName>
+        <default>false</default>
+        <label>Parent Group</label>
+    </standardValue>
+</StandardValueSet>

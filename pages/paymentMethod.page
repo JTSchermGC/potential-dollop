@@ -1,0 +1,5 @@
+<apex:page controller="PaymentMethod" action="{!Show}">
+    <div style="text-align:center;font-weight:bold;font-size:20px;">
+      Please Hold Tight while redirecting to Secure Connection...  
+    </div>
+</apex:page>
